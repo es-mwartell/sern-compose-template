@@ -190,6 +190,7 @@ Content-Type: application/json
 - **Purpose:** Web-based SQLite database viewer
 - **Volume:** `./data:/data` - Access to application database
 - **Restart:** unless-stopped
+- **Runtime:** Native multi-architecture gevent WSGI server with automatic recovery from failed health checks
 
 ## Development Workflow
 
@@ -263,9 +264,9 @@ Docker will automatically:
 
 ### Notes
 
-- **sqlite-web**: Uses linux/amd64 with emulation on ARM (slight performance impact, but works fine)
+- **sqlite-web**: Builds natively for the host architecture to avoid emulation stalls
 - **Performance**: Native builds provide best performance on all platforms
-- **Apple Silicon**: Fully supported - no Rosetta needed for the main app
+- **Apple Silicon**: Fully supported - no Rosetta or amd64 emulation needed
 
 ## Troubleshooting
 
