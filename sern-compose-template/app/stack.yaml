@@ -1,0 +1,18 @@
+apiVersion: katalyst.taxonomy/v2alpha
+kind: stack
+metadata:
+  name: "app"
+spec:
+  description: "SERN application: React frontend + Express/SQLite backend served from a single container, plus a sqlite-web viewer sidecar"
+  owners:
+    - "matt.wartell@gmail.com"
+  annotations:
+    layout: root
+    templateVersion: "0.1.0"
+  parents:
+    node: "sern-compose-template"
+  environments:
+    - "dev"
+  dependsOn:
+    nodes:
+      - "sern-compose-template"

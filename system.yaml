@@ -1,0 +1,15 @@
+apiVersion: katalyst.taxonomy/v2alpha
+kind: system
+metadata:
+  name: "sern-compose-template"
+spec:
+  description: "Full-stack SERN-lite (SQLite/Express/React/Node) Docker Compose template for small self-hosted apps"
+  owners:
+    - "matt.wartell@gmail.com"
+  annotations:
+    layout: root
+    templateVersion: "0.1.0"
+  environments:
+    - "dev"
+  dependsOn:
+    nodes: []

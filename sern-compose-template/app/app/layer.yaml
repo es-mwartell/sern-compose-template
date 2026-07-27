@@ -1,0 +1,21 @@
+apiVersion: katalyst.taxonomy/v2alpha
+kind: layer
+metadata:
+  name: "app"
+spec:
+  description: "Combined frontend+backend container (multi-stage Docker build) serving the React app and Express/SQLite API on port 8080"
+  owners:
+    - "matt.wartell@gmail.com"
+  annotations:
+    layout: root
+    layerType: "app-docker"
+    templateVersion: "0.1.0"
+    layerTypeVersion: "0.1.0"
+  parents:
+    node: "app"
+  environments:
+    - "dev"
+  dependsOn:
+    nodes:
+      - "app"
+  extensions: {}
